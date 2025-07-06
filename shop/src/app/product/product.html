@@ -1,0 +1,23 @@
+<h3>{{ title }}</h3>
+
+<div class="row" *ngIf="filteredProducts.length > 0; else noProducts">
+  <div class="card" *ngFor="let product of filteredProducts" style="width: 18rem; margin: 10px;">
+    <img [src]="product.imageUrl" class="card-img-top" alt="Ürün Resmi" />
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-center">
+        <h5 class="card-title mb-0">{{ product.name }}</h5>
+        <span class="text-muted">{{ product.price | currency: 'TRY' }}</span>
+      </div>
+      <p class="card-text mt-2">{{ product.description }}</p>
+      <button type="button" (click)="addToCart(product)" class="btn btn-primary">
+        Sepete Ekle
+      </button>
+    </div>
+  </div>
+</div>
+
+<ng-template #noProducts>
+  <div class="alert alert-primary" role="alert">
+    Bu kategoride ürün yoktur
+  </div>
+</ng-template>

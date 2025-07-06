@@ -1,0 +1,78 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Laptop",
+      "categoryID": 1,
+      "description": "Asus ZenBook",
+      "price": 1500,
+      "imageUrl": "https://images.pexels.com/photos/18105/pexels-photo.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Mouse",
+      "categoryID": 2,
+      "description": "A4 Tech",
+      "price": 50,
+      "imageUrl": "https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg"
+    },
+    {
+      "id": 3,
+      "name": "Mouse",
+      "categoryID": 3,
+      "description": "A4 Tech",
+      "price": 50,
+      "imageUrl": "https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg"
+    },
+    {
+      "id": 4,
+      "name": "Mouse",
+      "categoryID": 4,
+      "description": "A4 Tech",
+      "price": 50,
+      "imageUrl": "https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg"
+    },
+    {
+      "id": 5,
+      "name": "Mouse",
+      "categoryID": 5,
+      "description": "A4 Tech",
+      "price": 50,
+      "imageUrl": "https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg"
+    },
+    {
+      "id": 6,
+      "name": "Mouse",
+      "categoryID": 6,
+      "description": "A4 Tech",
+      "price": 50,
+      "imageUrl": "https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Bilgisayarlar"
+    },
+    {
+      "id": 2,
+      "name": "Aksesuarlar"
+    },
+    {
+      "id": 3,
+      "name": "Gaming"
+    },
+    {
+      "id": 4,
+      "name": "Ofis"
+    },
+    {
+      "id": 5,
+      "name": "Mobil"
+    },
+    {
+      "id": 6,
+      "name": "Diğer"
+    }
+  ]
+}

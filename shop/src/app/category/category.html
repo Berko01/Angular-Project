@@ -1,0 +1,23 @@
+<h3>{{ title }}</h3>
+
+<!-- Özel Tüm Ürünler linki -->
+<div class="list-group">
+  <a class="list-group-item list-group-item-action active" href="#">
+    Tüm Ürünler
+  </a>
+</div>
+
+<!-- Kategori link listesi -->
+<div>
+  @if (categories.length > 0) {
+  <div class="list-group">
+    @for (category of categories; track category.id) {
+<a [routerLink]="['/products/category', category.id]">{{ category.name }}</a>
+
+
+    }
+  </div>
+  } @else {
+  <p>Kategori bulunamadı.</p>
+  }
+</div>
