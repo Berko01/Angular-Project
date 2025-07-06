@@ -12,13 +12,21 @@ export class ProductService {
 
   private readonly http = inject(HttpClient);
 
-  getProducts(): Observable<ProductModel[]> {
-    return this.http.get<ProductModel[]>(this.apiUrl).pipe(
-      tap(data => console.log('API DATA:', data)), // Başarılı log
-      catchError(err => {
-        console.error('API HATASI:', err); // Hata logu
-        return of([]); // Fallback: boş dizi döner, app crash olmaz
-      })
-    );
+getProducts(categoryId?: string): Observable<ProductModel[]> {
+  let url = this.apiUrl;
+
+  if (categoryId) {
+    url += `?categoryID=${categoryId}`; // Büyük D harfli ID!
   }
+
+  return this.http.get<ProductModel[]>(url).pipe(
+    tap(data => console.log('API DATA:', data)),
+    catchError(err => {
+      console.error('API HATASI:', err);
+      return of([]);
+    })
+  );
+}
+
+
 }

@@ -1,23 +1,15 @@
-<h3>{{ title }}</h3>
-
-<!-- Özel Tüm Ürünler linki -->
-<div class="list-group">
-  <a class="list-group-item list-group-item-action active" href="#">
-    Tüm Ürünler
-  </a>
-</div>
-
 <!-- Kategori link listesi -->
-<div>
-  @if (categories.length > 0) {
-  <div class="list-group">
-    @for (category of categories; track category.id) {
-<a [routerLink]="['/products/category', category.id]">{{ category.name }}</a>
-
-
-    }
-  </div>
-  } @else {
-  <p>Kategori bulunamadı.</p>
-  }
+<div class="nav-scroller py-1 mb-2" *ngIf="categories.length > 0; else noCategories">
+  <nav class="nav d-flex">
+    <a [routerLink]="['/']" class="p-2 text-muted active">
+      Tüm Ürünler
+    </a>
+    <a *ngFor="let category of categories" [routerLink]="['/products/category', category.id]" class="p-2 text-muted">
+      {{ category.name }}
+    </a>
+  </nav>
 </div>
+
+<ng-template #noCategories>
+  <p>Kategori bulunamadı.</p>
+</ng-template>

@@ -4,11 +4,13 @@ import { CommonModule, CurrencyPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NotificationService } from '../core/services/notification.service';
 import { ProductService } from '../core/services/product.service';
+import { ActivatedRoute } from '@angular/router'; // SADECE EKLENDİ
+import { CategoryComponent } from '../category/category.component';
 
 @Component({
   standalone: true,
   selector: 'app-product',
-  imports: [CommonModule, CurrencyPipe, FormsModule],
+  imports: [CommonModule, CurrencyPipe, FormsModule, CategoryComponent],
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css'],
 })
@@ -19,21 +21,32 @@ export class ProductComponent {
 
   private readonly notifier = inject(NotificationService);
   private readonly productService = inject(ProductService);
+  private readonly route = inject(ActivatedRoute); // SADECE EKLENDİ
 
-  ngOnInit() {
-    this.loadProducts();
-  }
+ngOnInit() {
+  this.route.params.subscribe(params => {
+    const categoryId = params["id"]; 
+    console.log(categoryId)
+    if (categoryId) {
+      this.loadProducts(categoryId);
+    } else {
+      this.loadProducts(); 
+    }
+  })
+}
 
-  private loadProducts(): void {
-    this.productService.getProducts().subscribe({
-      next: (data) => {
-        this.products = data;
-      },
-      error: (err) => {
-        console.error('API HATASI:', err);
-      }
-    });
-  }
+private loadProducts(categoryId?: string): void {
+  this.productService.getProducts(categoryId).subscribe({
+    next: (data) => {
+      this.products = data;
+    },
+    error: (err) => {
+      console.error('API HATASI:', err);
+    }
+  });
+}
+
+
 
   get filteredProducts(): ProductModel[] {
     const filter = this.filterText.trim().toLowerCase();
