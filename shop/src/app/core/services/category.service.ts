@@ -2,7 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-import { Category } from '../../category/category.model';  // Kendi modeline göre yolu düzenle
+import { Category } from '../model/category';  // Kendi modeline göre yolu düzenle
 
 @Injectable({
   providedIn: 'root'
