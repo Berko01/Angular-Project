@@ -1,0 +1,64 @@
+<h3>Yeni ürün ekle</h3>
+
+<form #productAddForm="ngForm" (ngSubmit)="add(productAddForm)">
+    <!-- Ürün Adı -->
+    <div class="form-group mb-3">
+        <label for="name">Ürün Adı</label>
+        <input type="text" id="name" name="name" class="form-control" [(ngModel)]="model.name" #name="ngModel"
+            required />
+        <div *ngIf="name.invalid && name.dirty" class="alert alert-danger">
+            Ürün ismi gereklidir
+        </div>
+    </div>
+
+    <!-- Açıklama -->
+    <div class="form-group mb-3">
+        <label for="description">Açıklama</label>
+        <textarea id="description" name="description" class="form-control" [(ngModel)]="model.description"
+            #description="ngModel" required></textarea>
+        <div *ngIf="description.invalid && description.dirty" class="alert alert-danger">
+            Açıklama gereklidir
+        </div>
+    </div>
+
+    <!-- Resim URL -->
+    <div class="form-group mb-3">
+        <label for="imageUrl">Görsel URL</label>
+        <input type="text" id="imageUrl" name="imageUrl" class="form-control" [(ngModel)]="model.imageUrl"
+            #imageUrl="ngModel" required />
+        <div *ngIf="imageUrl.invalid && imageUrl.dirty" class="alert alert-danger">
+            Görsel URL gereklidir
+        </div>
+    </div>
+
+    <!-- Fiyat -->
+    <div class="form-group mb-3">
+        <label for="price">Fiyat</label>
+        <input type="number" id="price" name="price" class="form-control" [(ngModel)]="model.price" #price="ngModel"
+            required min="0" />
+        <div *ngIf="price.invalid && price.dirty" class="alert alert-danger">
+            Fiyat gereklidir ve 0'dan küçük olamaz
+        </div>
+    </div>
+
+    <!-- Kategori Seçimi -->
+    <div class="form-group mb-3">
+        <label for="categoryId">Kategori</label>
+        <select id="categoryId" name="categoryId" class="form-select" [(ngModel)]="model.categoryID"
+            #categoryId="ngModel" required>
+            <option [ngValue]="null" disabled selected>Bir kategori seçin</option>
+            <option *ngFor="let category of categories" [ngValue]="category.id">
+                {{ category.name }}
+            </option>
+        </select>
+        <div *ngIf="categoryId.invalid && categoryId.dirty" class="alert alert-danger">
+            Kategori seçimi gereklidir
+        </div>
+    </div>
+
+
+
+    <button class="btn btn-primary" type="submit" [disabled]="productAddForm.invalid">
+        Kaydet
+    </button>
+</form>

@@ -22,4 +22,12 @@ export class NotificationService {
       });
     }
   }
+
+  warning(message: string): void {
+    if (isPlatformBrowser(this.platformId)) {
+      import('alertifyjs').then(alertify => {
+        alertify.warning(message);
+      });
+    }
+  }
 }

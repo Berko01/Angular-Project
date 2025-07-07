@@ -7,12 +7,12 @@ export class ProductModel {
   imageUrl: string;
 
   constructor(
-    id: number,
-    name: string,
-    categoryID: number,
-    description: string,
-    price: number,
-    imageUrl: string
+    id: number = 0,
+    name: string = '',
+    categoryID: number = 0,
+    description: string = '',
+    price: number = 0,
+    imageUrl: string = ''
   ) {
     this.id = id;
     this.name = name;
@@ -21,4 +21,7 @@ export class ProductModel {
     this.price = price;
     this.imageUrl = imageUrl;
   }
+
+
+
 }

@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Laptop",
       "categoryID": 1,
       "description": "Asus ZenBook",
@@ -9,7 +9,7 @@
       "imageUrl": "https://images.pexels.com/photos/18105/pexels-photo.jpg"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Mouse",
       "categoryID": 2,
       "description": "A4 Tech",
@@ -17,7 +17,7 @@
       "imageUrl": "https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Mouse",
       "categoryID": 3,
       "description": "A4 Tech",
@@ -25,7 +25,7 @@
       "imageUrl": "https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Mouse",
       "categoryID": 4,
       "description": "A4 Tech",
@@ -33,7 +33,7 @@
       "imageUrl": "https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Mouse",
       "categoryID": 5,
       "description": "A4 Tech",
@@ -41,37 +41,53 @@
       "imageUrl": "https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Mouse",
       "categoryID": 6,
       "description": "A4 Tech",
       "price": 50,
       "imageUrl": "https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg"
+    },
+    {
+      "id": 0,
+      "name": "İphone 14 Pro Max",
+      "price": 55000,
+      "categoryID": "6",
+      "description": "2023 yılının en iyi telefonu",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjjKTXm74Dr0F02HY7GZ5eFfKoiBmvyyDY4Q&s"
+    },
+    {
+      "id": "2d76",
+      "name": "Macbook Pro M4",
+      "description": "2025 yılının en güçlü MacBook'u",
+      "imageUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mbp14-spaceblack-select-202410?wid=892&hei=820&fmt=jpeg&qlt=90&.v=YnlWZDdpMFo0bUpJZnBpZjhKM2M3VGhTSEZFNjlmT2xUUDNBTjljV1BxWjZkZE52THZKR1lubXJyYmRyWWlhOXZvdUZlR0V0VUdJSjBWaDVNVG95Yk15Y0c3T3Y4UWZwZExHUFdTUC9lN28",
+      "price": 70000,
+      "categoryID": "1"
     }
   ],
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Bilgisayarlar"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Aksesuarlar"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Gaming"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Ofis"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Mobil"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Diğer"
     }
   ]

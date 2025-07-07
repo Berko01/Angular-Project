@@ -1,0 +1,58 @@
+<h3>Reactive Form ile Ürün Ekle</h3>
+
+<form [formGroup]="productForm" (ngSubmit)="add()">
+  <div class="mb-3">
+    <label>Ürün Adı</label>
+    <input type="text" class="form-control" formControlName="name" />
+    <div *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched"
+         class="alert alert-danger">
+      Ürün ismi gereklidir.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label>Açıklama</label>
+    <textarea class="form-control" formControlName="description"></textarea>
+    <div *ngIf="productForm.get('description')?.invalid && productForm.get('description')?.touched"
+         class="alert alert-danger">
+      Açıklama gereklidir.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label>Görsel URL</label>
+    <input type="text" class="form-control" formControlName="imageUrl" />
+    <div *ngIf="productForm.get('imageUrl')?.invalid && productForm.get('imageUrl')?.touched"
+         class="alert alert-danger">
+      Görsel URL gereklidir.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label>Fiyat</label>
+    <input type="number" class="form-control" formControlName="price" />
+    <div *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched"
+         class="alert alert-danger">
+      Fiyat gereklidir ve negatif olamaz.
+    </div>
+  </div>
+
+<div class="mb-3">
+  <label>Kategori</label>
+  <select class="form-select" formControlName="categoryID">
+    <option [ngValue]="null" disabled selected>Bir kategori seçin</option>
+    <option *ngFor="let category of categories" [ngValue]="category.id">
+      {{ category.name }}
+    </option>
+  </select>
+  <div *ngIf="productForm.get('categoryID')?.invalid && productForm.get('categoryID')?.touched"
+       class="alert alert-danger">
+    Kategori seçimi gereklidir.
+  </div>
+</div>
+
+
+  <button class="btn btn-primary" type="submit" [disabled]="productForm.invalid">
+    Kaydet
+  </button>
+</form>
