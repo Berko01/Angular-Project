@@ -7,8 +7,8 @@ import { CommonModule } from '@angular/common';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, RouterLink, CommonModule],
-  templateUrl: './app.html',
-  styleUrls: ['./app.css'],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
 })
 export class App {
   protected title = 'shop';

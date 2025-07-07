@@ -11,8 +11,8 @@ import { NotificationService } from '../../core/services/notification.service';
   standalone: true,
   selector: 'app-product-add-forms1',
   imports: [CommonModule, FormsModule], // ← ŞART!
-  templateUrl: './product-add-forms1.html',
-  styleUrls: ['./product-add-forms1.css'],
+  templateUrl: './product-add-forms1.component.html',
+  styleUrls: ['./product-add-forms1.component.css'],
   providers: [CategoryService, ProductService]
 })
 export class ProductAddForms1 {
